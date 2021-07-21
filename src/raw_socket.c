@@ -52,7 +52,7 @@ static error_t parse_arg(int key, char *arg, struct argp_state *state) {
                 goto endpoint_error;
 
             errno = 0;
-            tmp = strtol(port, NULL, 10);
+            tmp = strtol(port + 1, NULL, 10);
             if (errno || tmp < 0) {
                 goto endpoint_error;
             }
@@ -71,7 +71,7 @@ static error_t parse_arg(int key, char *arg, struct argp_state *state) {
                 goto endpoint_error;
 
             errno = 0;
-            tmp = strtol(port, NULL, 10);
+            tmp = strtol(port + 1, NULL, 10);
             if (errno || tmp < 0) {
                 goto endpoint_error;
             }
