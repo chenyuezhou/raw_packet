@@ -96,7 +96,7 @@ endpoint_error:
                 argp_usage(state);
             }
 
-            cfg->ack = tmp;
+            cfg->ack = htonl(tmp);
             break;
         case 's':
             errno = 0;
@@ -107,7 +107,7 @@ endpoint_error:
                 argp_usage(state);
             }
 
-            cfg->seq = tmp;
+            cfg->seq = htonl(tmp);
             break;
         case 'h':
             argp_state_help(state, stderr, ARGP_HELP_STD_HELP);
